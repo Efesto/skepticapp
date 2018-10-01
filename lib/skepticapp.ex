@@ -8,11 +8,10 @@ defmodule Skepticapp do
 
     # Define workers and child supervisors to be supervised
     children = [
-      # Start the Ecto repository
       supervisor(Skepticapp.Repo, []),
-      # Start the endpoint when the application starts
+      worker(Skepticapp.Stash, []),
       supervisor(Skepticapp.Endpoint, []),
-      Skepticapp.FollowerSupervisor
+      worker(Skepticapp.Follower, [])
       # Start your own worker by calling: Skepticapp.Worker.start_link(arg1, arg2, arg3)
       # worker(Skepticapp.Worker, [arg1, arg2, arg3]),
     ]

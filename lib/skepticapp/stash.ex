@@ -2,7 +2,7 @@ defmodule Skepticapp.Stash do
   use Agent
   @name __MODULE__
 
-  def start_link(_) do
+  def start_link() do
     {:ok, pid} = Agent.start_link(fn -> %{pro: [], against: []} end, name: __MODULE__)
 
     :global.register_name(@name, pid)

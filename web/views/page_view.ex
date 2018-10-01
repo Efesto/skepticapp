@@ -6,6 +6,6 @@ defmodule Skepticapp.PageView do
   end
 
   def pro_tweets do
-    Skepticapp.Stash.all()[:pro]
+    Enum.take(Skepticapp.Stash.all()[:pro], -50)
   end
 end

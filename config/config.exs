@@ -32,4 +32,4 @@ config :extwitter, :oauth,
   access_token_secret: System.get_env("TWITTER_ACCESS_SECRET")
 
 config :skepticapp, :twitter_api_module, ExTwitter
-config :skepticapp, :topic, "@matteosalvinimi"
+config :skepticapp, :topic, "Donald Trump"

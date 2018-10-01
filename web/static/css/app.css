@@ -1,1 +1,23 @@
-/* This file is for your main application css. */
+ul {
+  list-style: none;
+}
+
+.tweet {
+  display: flex;
+  margin-bottom: 2em;
+}
+
+.tweet__user-container {
+  display: flex;
+  width: 60px;
+  flex-direction: column;
+  margin-right: 1em;
+}
+
+.tweet__date {
+  float: right;
+}
+
+.tweet__content {
+  min-width: 80%;
+}

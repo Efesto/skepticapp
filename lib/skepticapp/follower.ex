@@ -4,16 +4,18 @@ defmodule Skepticapp.Follower do
   @twitter_client Application.get_env(:skepticapp, :twitter_api_module)
 
   def start_link(_) do
-    topic = Application.get_env(:skepticapp, :topic)
-    Task.start_link(fn -> follow(topic) end)
+    Task.start_link(fn -> follow() end)
   end
 
-  @spec follow(any()) :: [any()]
-  def follow(topic) do
+  def follow do
     stream =
-      @twitter_client.stream_filter(track: topic)
+      @twitter_client.stream_filter(track: topic())
       |> Stream.map(fn tweet -> Skepticapp.Stash.add_pro(tweet) end)
 
     Enum.to_list(stream)
+  end
+
+  def topic do
+    Application.get_env(:skepticapp, :topic)
   end
 end

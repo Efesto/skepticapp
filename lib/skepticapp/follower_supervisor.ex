@@ -1,4 +1,4 @@
-defmodule Skepticapp.Supervisor do
+defmodule Skepticapp.FollowerSupervisor do
   use Supervisor
 
   def start(_, args) do

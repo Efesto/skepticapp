@@ -12,7 +12,7 @@ defmodule Skepticapp do
       supervisor(Skepticapp.Repo, []),
       # Start the endpoint when the application starts
       supervisor(Skepticapp.Endpoint, []),
-      Skepticapp.Supervisor
+      Skepticapp.FollowerSupervisor
       # Start your own worker by calling: Skepticapp.Worker.start_link(arg1, arg2, arg3)
       # worker(Skepticapp.Worker, [arg1, arg2, arg3]),
     ]

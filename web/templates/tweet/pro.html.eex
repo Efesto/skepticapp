@@ -1,7 +1,7 @@
 <div class="jumbotron">
-  <h2 class="lead"><%= gettext "Today %{pro_tweets} about \"%{topic}\"", pro_tweets: pro_tweets_count(), topic: Skepticapp.Follower.topic() %></h2>
+  <h2 class="lead"><%= gettext "Today %{pro_tweets} pro tweets about \"%{topic}\"", pro_tweets: pro_tweets_count(), topic: Skepticapp.Follower.topic() %></h2>
   <ul>
-    <%= Enum.map(pro_tweets(), fn t -> %>
+    <%= Enum.map(tweets_pro(), fn t -> %>
       <li class="tweet">
       <div class="tweet__user-container">
         <img class="tweet__user-image" src="<%=t.user.profile_image_url_https %>" />

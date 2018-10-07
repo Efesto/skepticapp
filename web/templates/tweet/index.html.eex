@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h2 class="lead"><%= gettext "Today %{pro_tweets} pro tweets about \"%{topic}\"", pro_tweets: pro_tweets_count(), topic: Skepticapp.Follower.topic() %></h2>
+  <h2 class="lead"><%= gettext "%{against_tweets} against tweets", against_tweets: against_tweets_count() %></h2>
+  
+  <ul>
+    <%= Enum.map(tweets(), fn t -> %>
+      <li class="tweet">
+      <div class="tweet__user-container">
+        <img class="tweet__user-image" src="<%=t.user.profile_image_url_https %>" />
+        <strong><%= t.user.name %></strong>
+      </div>
+      <div class="tweet__content">
+        <p><%= t.text %></p>
+        <em class="tweet__date"><%= t.created_at %></em>
+      </div>
+      </li>
+    <% end) %>
+  </ul>
+</div>

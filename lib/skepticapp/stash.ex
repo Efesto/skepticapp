@@ -25,6 +25,10 @@ defmodule Skepticapp.Stash do
     Agent.get(agent_pid(), &length(&1[:pro]))
   end
 
+  def against_count() do
+    Agent.get(agent_pid(), &length(&1[:against]))
+  end
+
   def all() do
     Agent.get(agent_pid(), & &1)
   end

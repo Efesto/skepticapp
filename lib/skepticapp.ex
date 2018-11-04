@@ -8,7 +8,6 @@ defmodule Skepticapp do
 
     # Define workers and child supervisors to be supervised
     children = [
-      supervisor(Skepticapp.Repo, []),
       worker(Skepticapp.Stash, []),
       supervisor(Skepticapp.Endpoint, []),
       worker(Skepticapp.Follower, [])

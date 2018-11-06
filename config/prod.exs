@@ -28,7 +28,7 @@ config :extwitter, :oauth,
   access_token: Map.fetch!(System.get_env(), "EXTWITTER_ACCESS_TOKEN"),
   access_token_secret: Map.fetch!(System.get_env(), "EXTWITTER_ACCESS_TOKEN_SECRET")
 
-config :skepticapp, :topic, Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
+config :skepticapp, :topic, Map.fetch!(System.get_env(), "TOPIC")
 
 # ## SSL Support
 #

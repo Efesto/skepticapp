@@ -39,6 +39,8 @@ config :skepticapp, Skepticapp.Endpoint,
     ]
   ]
 
+config :skepticapp, :topic, "Matteo Salvini"
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
@@ -54,3 +56,5 @@ config :skepticapp, Skepticapp.Repo,
   database: "skepticapp_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "#{Mix.env()}.secret.exs"

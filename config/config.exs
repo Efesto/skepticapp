@@ -26,6 +26,3 @@ config :logger, :console,
 import_config "#{Mix.env()}.exs"
 
 config :skepticapp, :twitter_api_module, ExTwitter
-config :skepticapp, :topic, "Matteo Salvini"
-
-import_config "#{Mix.env()}.secret.exs"

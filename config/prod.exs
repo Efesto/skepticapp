@@ -22,6 +22,14 @@ config :skepticapp, Skepticapp.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :extwitter, :oauth,
+  consumer_key: Map.fetch!(System.get_env(), "EXTWITTER_CONSUMER_KEY"),
+  consumer_secret: Map.fetch!(System.get_env(), "EXTWITTER_CONSUMER_SECRET"),
+  access_token: Map.fetch!(System.get_env(), "EXTWITTER_ACCESS_TOKEN"),
+  access_token_secret: Map.fetch!(System.get_env(), "EXTWITTER_ACCESS_TOKEN_SECRET")
+
+config :skepticapp, :topic, Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

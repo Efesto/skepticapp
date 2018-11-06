@@ -6,8 +6,6 @@
 use Mix.Config
 
 # General application configuration
-config :skepticapp,
-  ecto_repos: []
 
 # Configures the endpoint
 config :skepticapp, Skepticapp.Endpoint,

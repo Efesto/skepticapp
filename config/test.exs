@@ -17,3 +17,9 @@ config :skepticapp, Skepticapp.Repo,
   database: "skepticapp_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :extwitter, :oauth,
+  consumer_key: "consumer_key",
+  consumer_secret: "consumer_secret",
+  access_token: "access_token",
+  access_token_secret: "access_token_secret"

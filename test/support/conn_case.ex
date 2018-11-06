@@ -33,7 +33,7 @@ defmodule Skepticapp.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Skepticapp.Repo)
+    # :ok = Ecto.Adapters.SQL.Sandbox.checkout(Skepticapp.Repo)
 
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Skepticapp.Repo, {:shared, self()})

@@ -1,7 +1,5 @@
 <div class="jumbotron">
-  <h2 class="lead"><%= gettext "Today %{pro_tweets} pro tweets about \"%{topic}\"", pro_tweets: pro_tweets_count(), topic: Skepticapp.Follower.topic() %></h2>
-  <h2 class="lead"><%= gettext "%{against_tweets} against tweets", against_tweets: against_tweets_count() %></h2>
-  
+  <h2 class="lead"><%= gettext "Today %{count} pro tweets about \"%{topic}\"", count: tweets_count(), topic: Skepticapp.Follower.topic() %></h2>  
   <ul id="tweets_list">
   </ul>
 </div>

@@ -31,11 +31,5 @@ defmodule Skepticapp.Follower do
     end
   end
 
-  defp handle_tweet(tweet) do
-    cond do
-      String.contains?(tweet.user.name, "🇮🇹") -> Skepticapp.Stash.add_pro(tweet)
-      String.contains?(tweet.user.name, "🇺🇸") -> Skepticapp.Stash.add_pro(tweet)
-      true -> Skepticapp.Stash.add_against(tweet)
-    end
-  end
+  defp handle_tweet(tweet), do: Skepticapp.Stash.add(tweet)
 end

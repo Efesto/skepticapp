@@ -16,7 +16,6 @@ defmodule Skepticapp.Router do
   scope "/", Skepticapp do
     pipe_through(:browser)
 
-    get("/:position", TweetController, :index)
     get("/", TweetController, :index)
   end
 

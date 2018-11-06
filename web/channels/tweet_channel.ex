@@ -25,7 +25,7 @@ defmodule Skepticapp.TweetChannel do
   defp start_listener(socket, last_tweet_index) do
     Task.async(fn ->
       tweets =
-        Skepticapp.Stash.all()[:against]
+        Skepticapp.Stash.all()
         |> (&Enum.slice(&1, last_tweet_index + 1, length(&1))).()
 
       broadcast_tweets(tweets, socket)

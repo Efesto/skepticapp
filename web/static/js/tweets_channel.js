@@ -17,11 +17,12 @@ let TweetsChannel = {
         console.log("Unable to join", resp);
       });
 
-    channel.on("new_tweets", ({ tweets }) => {
+    channel.on("new_tweets", ({ tweets, totalTweetsCount }) => {
       console.log(`${tweets.length} new tweets`);
       tweets.forEach(t => {
         this.renderTweet(container, t);
       });
+      this.updateCount(totalTweetsCount);
     });
   },
 
@@ -42,6 +43,10 @@ let TweetsChannel = {
     `;
 
     container.prepend(template);
+  },
+
+  updateCount(totalTweetsCount) {
+    document.getElementById("tweets-count").textContent = totalTweetsCount;
   }
 };
 

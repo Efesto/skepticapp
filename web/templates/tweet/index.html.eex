@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2 class="lead"><%= gettext "Today %{count} pro tweets about \"%{topic}\"", count: tweets_count(), topic: Skepticapp.Follower.topic() %></h2>  
+  <h2 class="lead">Today <span id="tweets-count">0</span> tweets about "<%= Skepticapp.Follower.topic() %>"</h2>  
   <ul id="tweets_list">
   </ul>
 </div>

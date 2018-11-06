@@ -39,7 +39,7 @@ config :skepticapp, Skepticapp.Endpoint,
     ]
   ]
 
-config :skepticapp, :topic, "Matteo Salvini"
+config :skepticapp, :topic, "Donald Trump"
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

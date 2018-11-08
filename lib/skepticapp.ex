@@ -9,10 +9,10 @@ defmodule Skepticapp do
     # Define workers and child supervisors to be supervised
     children = [
       worker(Skepticapp.Stash, []),
+      worker(Skepticapp.Sockets, []),
       supervisor(Skepticapp.Endpoint, []),
-      worker(Skepticapp.Follower, [])
-      # Start your own worker by calling: Skepticapp.Worker.start_link(arg1, arg2, arg3)
-      # worker(Skepticapp.Worker, [arg1, arg2, arg3]),
+      worker(Skepticapp.Follower, []),
+      worker(Skepticapp.TweetsBroadcaster, [])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

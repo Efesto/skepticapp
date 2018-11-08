@@ -19,9 +19,15 @@ defmodule Skepticapp.UserSocket do
   #
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
-  def connect(_params, socket) do
-    {:ok, socket}
+  def connect(%{"user_session_id" => user_session_id}, socket) do
+    if user_session_id != "undefined" do
+      {:ok, assign(socket, :user_session_id, user_session_id)}
+    else
+      :error
+    end
   end
+
+  def connect(_params, _socket), do: :error
 
   # Socket id's are topics that allow you to identify all sockets for a given user:
   #
@@ -33,5 +39,5 @@ defmodule Skepticapp.UserSocket do
   #     Skepticapp.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
-  def id(_socket), do: nil
+  def id(socket), do: "users_socket:#{socket.assigns.user_session_id}"
 end

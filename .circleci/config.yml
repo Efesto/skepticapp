@@ -17,8 +17,14 @@ jobs:
     steps:
       - checkout
 
-      - run: mix local.hex --force
-      - run: mix local.rebar --force
+      - run: 
+          command: mix local.hex --force
+          environment:
+            MIX_ENV: test
+      - run: 
+          command: mix local.rebar --force
+          environment:
+            MIX_ENV: test
       - run: 
           name: Mix gets dependencies
           command: mix deps.get

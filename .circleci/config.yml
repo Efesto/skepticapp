@@ -4,9 +4,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - /.*/
     docker:
       # specify the version here
       - image: circleci/elixir:1.7
